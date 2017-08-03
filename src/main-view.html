@@ -1,0 +1,66 @@
+<dom-module id="main-view">
+
+	<template>
+		<style>
+
+			.qmz-container {
+				height: 100vh;
+				width: 100%;
+				background: url("../images/paint-color-wallpaper.jpg") center no-repeat;
+				/*background-color: black;*/
+				background-size: cover;
+				margin: auto auto;
+				text-align: center;
+			}
+
+			@keyframes from-black-to-white-to-black {
+				0%   { color: black; }
+				50%	 { color: white; }
+				100% { color: black; }
+			}
+
+			@keyframes from-black-to-white {
+				0%   {color: black;}
+				100% {color: white;}
+			}
+
+			#black-part {
+				color: white;
+				animation: from-black-to-white 4s;
+			}
+
+			#mainBox {
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+				text-align: center;
+			}
+
+			h1 {
+				color: #FFF;
+				margin: 0;
+				font-weight: 100;
+				font-size: 6em;
+				font-family: 'Monoton', 'Roboto', sans-serif, cursive;
+			}
+
+		</style>
+
+		<div class="qmz-container">
+			<div id="mainBox">
+				<h1>
+					<span id="white-part">Quique</span>
+					<span id="black-part">Mz</span>
+				</h1>
+			</div>
+		</div>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'main-view'
+		})
+
+	</script>
+
+</dom-module>
