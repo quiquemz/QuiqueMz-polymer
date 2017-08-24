@@ -1,15 +1,10 @@
 {
   "entrypoint": "index.html",
-  "shell": "src/my-app.html",
+  "shell": "src/qmz-app.html",
   "sources": [
     "src/**/*",
     "images/**/*",
     "bower.json"
-  ],
-  "fragments": [
-    "src/my-search-url.html",
-    "src/my-dashboard.html",
-    "src/my-view404.html"
   ],
   "extraDependencies": [
     "bower_components/bootstrap/dist/css/bootstrap.css",
