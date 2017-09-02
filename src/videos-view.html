@@ -6,7 +6,6 @@
 
 		<style>
 
-
 			.qmz-container {
 				min-height: 100vh;
 				width: 100%;
@@ -55,67 +54,53 @@
 			<div class="title">INSPIRATIONS</div>
 
 			<div class="container-fluid">
-				<div class="col-xs-12 col-md-6">
-					<div class="video-item embed-responsive embed-responsive-16by9">
-						<iframe class="embed-responsive-item"
-								src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjasonlsilva%2Fvideos%2F1735277136736564%2F&width=500&show_text=false&height=280&appId"
-								allowTransparency="true"
-								allowFullScreen="allowfullscreen">
-						</iframe>
+				<template is="dom-repeat" items="[[videos]]" as="video">
+					<div class="col-xs-12 col-md-6">
+						<div class="video-item embed-responsive embed-responsive-16by9">
+							<iframe class="embed-responsive-item"
+									src="[[video.url]]"
+									allowTransparency="true"
+									allowFullScreen="allowfullscreen">
+							</iframe>
+						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-md-6">
-					<div class="video-item embed-responsive embed-responsive-16by9">
-						<iframe class="embed-responsive-item"
-								src="https://www.youtube.com/embed/C2p42GASnUo"
-								allowTransparency="true"
-								allowFullScreen="allowfullscreen">
-						</iframe>
-					</div>
-				</div>
-				<div class="col-xs-12 col-md-6">
-					<div class="video-item embed-responsive embed-responsive-16by9">
-						<iframe class="embed-responsive-item"
-								src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Falanxelmundo%2Fvideos%2F1124530757568465%2F&show"
-								allowTransparency="true"
-								allowFullScreen="allowfullscreen">
-						</iframe>
-					</div>
-				</div>
-				<div class="col-xs-12 col-md-6">
-					<div class="video-item embed-responsive embed-responsive-16by9">
-						<iframe class="embed-responsive-item"
-								src="https://www.youtube.com/embed/59Q_lhgGANc"
-								allowTransparency="true"
-								allowFullScreen="allowfullscreen">
-						</iframe>
-					</div>
-				</div>
-				<div class="col-xs-12 col-md-6">
-					<div class="video-item embed-responsive embed-responsive-16by9">
-						<iframe class="embed-responsive-item"
-								src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjasonlsilva%2Fvideos%2F1701365333461078%2F&show_text=0&width=560"
-								allowTransparency="true"
-								allowFullScreen="allowfullscreen">
-						</iframe>
-					</div>
-				</div>
-				<div class="col-xs-12 col-md-6">
-					<div class="video-item embed-responsive embed-responsive-16by9">
-						<iframe class="embed-responsive-item"
-								src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FTED%2Fvideos%2F10157913210995652%2F&show_text=0&width=560"
-								allowTransparency="true"
-								allowFullScreen="allowfullscreen">
-						</iframe>
-					</div>
-				</div>
+				</template>
 			</div>
 		</div>
 	</template>
 
 	<script>
 		Polymer({
-			is: 'videos-view'
+			is: 'videos-view',
+
+			properties: {
+				videos: {
+					type: Array,
+					value: () => {
+						return [
+							{
+								title: 'The Big Picture',
+								artist: 'Jason Silva',
+								url: 'https://www.youtube.com/embed/f55DSbUGhMU'
+							}, {
+								title: 'Poetry, music, and identity',
+								artist: 'Jorge Drexler',
+								url: 'https://www.youtube.com/embed/C2p42GASnUo'
+							}, {
+								title: 'Makeba',
+								artist: 'Jain',
+								url: 'https://www.youtube.com/embed/59Q_lhgGANc'
+							}, {
+								title: 'La vida es un asunto musical | Gracias 2016',
+								artist: 'Alan por el mundo',
+								url: 'https://www.youtube.com/embed/FoKxDL4RtxE'
+							}
+
+
+						]
+					}
+				}
+			}
 		})
 
 	</script>
